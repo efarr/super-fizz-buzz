@@ -1,7 +1,10 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperFizzBuzz", "SuperFizzBuzz\SuperFizzBuzz.csproj", "{7529FD34-EDEE-413F-ACAA-6BA727768BEE}"
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperFizzBuzz", "SuperFizzBuzz\SuperFizzBuzz.csproj", "{7529FD34-EDEE-413F-ACAA-6BA727768BEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperFizzBuzz.Specs", "SuperFizzBuzz.Specs\SuperFizzBuzz.Specs.csproj", "{5A88CF7A-2DA3-481B-8DC8-159BEA4FFA70}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,5 +16,15 @@ Global
 		{7529FD34-EDEE-413F-ACAA-6BA727768BEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7529FD34-EDEE-413F-ACAA-6BA727768BEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7529FD34-EDEE-413F-ACAA-6BA727768BEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A88CF7A-2DA3-481B-8DC8-159BEA4FFA70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A88CF7A-2DA3-481B-8DC8-159BEA4FFA70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A88CF7A-2DA3-481B-8DC8-159BEA4FFA70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A88CF7A-2DA3-481B-8DC8-159BEA4FFA70}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CC4F1C95-368E-49E0-866F-E6D8B6040B9A}
 	EndGlobalSection
 EndGlobal
