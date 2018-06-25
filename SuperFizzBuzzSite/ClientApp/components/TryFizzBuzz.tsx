@@ -6,17 +6,22 @@ interface TryFizzBuzzState {
     fizzBuzz: string[];
     loading: boolean;
     upperBound: string;
+    overrides: string;
 }
 
 export class TryFizzBuzz extends React.Component<RouteComponentProps<{}>, TryFizzBuzzState> {
     constructor() {
         super();
-        this.state = { fizzBuzz:[], loading: false, upperBound: "" };
+        this.state = { fizzBuzz:[], loading: false, upperBound: "100", overrides: "3,Fizz,5,Buzz" };
 
     }
 
     updateUpperBound(value: string) {
         this.setState({ ...this.state, upperBound: value});
+    }
+
+    updateOverrides(value: string) {
+        this.setState({ ...this.state, overrides: value });
     }
 
     calculate() {
@@ -37,7 +42,6 @@ export class TryFizzBuzz extends React.Component<RouteComponentProps<{}>, TryFiz
             ? this.renderResults()
             : <p></p>;
 
-
         return <div>
             <h1>Try Super FizzBuzz</h1>
             {contents}
@@ -46,16 +50,15 @@ export class TryFizzBuzz extends React.Component<RouteComponentProps<{}>, TryFiz
     }
 
     renderResults() {
-        return <div>
-                <ul>
+        return <div><ul>
                 {this.state.fizzBuzz.map((item) => <li>{item}</li>)}
-                </ul>
-               </div>;
+               </ul></div>;
     }
 
     renderInputForm() {
         return <div>
-            <input type="text" placeholder="Upper Bound" onChange={(e) => { this.updateUpperBound(e.target.value) }} />
+            <input type="text" placeholder="Upper Bound" value={this.state.upperBound} onChange={(e) => { this.updateUpperBound(e.target.value) }} />
+            <input type="text" placeholder="Multiple Overrides (eg. 3,Fizz,5,Buzz)" value={this.state.overrides} onChange={(e) => { this.updateOverrides(e.target.value) }} />
             <button onClick={() => { this.calculate() }}>Proceed with Magic</button>
         </div>;
     }

@@ -4,9 +4,15 @@ VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperFizzBuzz", "SuperFizzBuzz\SuperFizzBuzz.csproj", "{7529FD34-EDEE-413F-ACAA-6BA727768BEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperFizzBuzzTests", "SuperFizzBuzzTests\SuperFizzBuzzTests.csproj", "{95738132-C603-4E59-B181-C38B34EBF342}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperFizzBuzzTests", "SuperFizzBuzzTests\SuperFizzBuzzTests.csproj", "{95738132-C603-4E59-B181-C38B34EBF342}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperFizzBuzzSite", "SuperFizzBuzzSite\SuperFizzBuzzSite.csproj", "{493CFD95-E057-4760-9941-A450D9EAD557}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperFizzBuzzSite", "SuperFizzBuzzSite\SuperFizzBuzzSite.csproj", "{493CFD95-E057-4760-9941-A450D9EAD557}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{66CCB45A-7771-4353-884E-D1136FB5A354}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

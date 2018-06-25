@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -12,7 +13,14 @@ namespace SuperFizzBuzzTests
 
         public WhenOverridingMultiples()
         {
-            _rendered = FizzBuzz.Calculate(100, (-3, "Never"), (7, "Dog"), (3, "Hot"), (42, "WithMustard")).ToList();
+            var overrides = new List<Tuple<int, string>>
+            {
+                Tuple.Create(-3, "Never"),
+                Tuple.Create(7, "Dog"),
+                Tuple.Create(3, "Hot"),
+                Tuple.Create(42, "WithMustard")
+            };
+            _rendered = FizzBuzz.Calculate(100, overrides).ToList();
         }
 
         [TestMethod]
