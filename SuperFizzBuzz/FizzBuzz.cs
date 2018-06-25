@@ -29,12 +29,19 @@ namespace SuperFizzBuzz
 
         public static IEnumerable<string> Calculate(int upperBound, params (int, string)[] overridePairs)
         {
+            var pairs = ConvertPairsToListOfTuples(overridePairs);
+            return Calculate(upperBound, pairs.Count > 0 ? pairs : null);
+        }
+
+        private static List<Tuple<int, string>> ConvertPairsToListOfTuples((int, string)[] overridePairs)
+        {
             var pairs = new List<Tuple<int, string>>();
             foreach ((int, string) pair in overridePairs)
             {
                 pairs.Add(new Tuple<int, string>(pair.Item1, pair.Item2));
             }
-            return Calculate(upperBound, pairs.Count > 0 ? pairs : null);
+
+            return pairs;
         }
 
         private static List<int> CacheSortedListForFastIteration(Dictionary<int, string> overrides)
@@ -49,7 +56,7 @@ namespace SuperFizzBuzz
 
         private static IList<Tuple<int, string>> DefautToFizzBuzz(IList<Tuple<int, string>> overridePairs)
         {
-            return overridePairs ?? new List<Tuple<int, string>>()
+            return overridePairs ?? new List<Tuple<int, string>>
             {
                 Tuple.Create(3, "Fizz"),
                 Tuple.Create(5, "Buzz")
