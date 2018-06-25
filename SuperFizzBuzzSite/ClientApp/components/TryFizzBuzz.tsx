@@ -26,7 +26,14 @@ export class TryFizzBuzz extends React.Component<RouteComponentProps<{}>, TryFiz
 
     calculate() {
         this.setState({...this.state, loading:true});
-        fetch(`api/fizzbuzz/${this.state.upperBound}`)
+        fetch('api/fizzbuzz/', {
+            method: 'post',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ "upperBound": this.state.upperBound, "overrides": this.state.overrides })
+        })
             .then(response => response.json())
             .then(data => {
                 this.setState({...this.state, fizzBuzz: data, loading: false });
@@ -57,8 +64,10 @@ export class TryFizzBuzz extends React.Component<RouteComponentProps<{}>, TryFiz
 
     renderInputForm() {
         return <div>
-            <input type="text" placeholder="Upper Bound" value={this.state.upperBound} onChange={(e) => { this.updateUpperBound(e.target.value) }} />
-            <input type="text" placeholder="Multiple Overrides (eg. 3,Fizz,5,Buzz)" value={this.state.overrides} onChange={(e) => { this.updateOverrides(e.target.value) }} />
+            <label>Upper Bound:</label>
+            <input type="text" placeholder="enter a number up to 1000" value={this.state.upperBound} onChange={(e) => { this.updateUpperBound(e.target.value) }} /><br/>
+            <label>Override Multiples:</label>
+            <input type="text" placeholder="multiple,string,multiple,string (eg. 3,Fizz,5,Buzz)" value={this.state.overrides} onChange={(e) => { this.updateOverrides(e.target.value) }} /><br />
             <button onClick={() => { this.calculate() }}>Proceed with Magic</button>
         </div>;
     }

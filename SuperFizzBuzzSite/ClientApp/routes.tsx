@@ -3,7 +3,6 @@ import { Route } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { Home } from './components/Home';
 import { TryFizzBuzz } from "./components/TryFizzBuzz";
-import { Counter } from './components/Counter';
 
 export const routes = <Layout>
     <Route exact path='/' component={ Home } />

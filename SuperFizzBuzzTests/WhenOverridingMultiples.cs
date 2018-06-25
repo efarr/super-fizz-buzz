@@ -15,7 +15,6 @@ namespace SuperFizzBuzzTests
         {
             var overrides = new List<Tuple<int, string>>
             {
-                Tuple.Create(-3, "Never"),
                 Tuple.Create(7, "Dog"),
                 Tuple.Create(3, "Hot"),
                 Tuple.Create(42, "WithMustard")

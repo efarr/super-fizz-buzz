@@ -35,9 +35,18 @@ namespace SuperFizzBuzzSite.Controllers
             string[] tokens = fizzBuzzRequest.Overrides.Split(',');
             for (int i = 0; i < tokens.Length; i+=2)
             {
-                overrideList.Add(Tuple.Create(int.Parse(tokens[i]), tokens[i+1]));
+                try
+                {
+                    overrideList.Add(Tuple.Create(int.Parse(tokens[i]), tokens[i + 1]));
+                }
+                catch (Exception)
+                {
+                    // Would add robust error handling for a production site
+                }
             }
-            return FizzBuzz.Calculate(fizzBuzzRequest.UpperBound, overrideList);
+
+            int upperBound = Math.Min(fizzBuzzRequest.UpperBound, 1000);
+            return FizzBuzz.Calculate(upperBound, overrideList);
         }
     }
 
