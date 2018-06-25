@@ -1,10 +1,11 @@
-using Xunit;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace SuperFizzBuzz.Specs
+namespace SuperFizzBuzzTests
 {
+    [TestClass]
     public class WhenValueIsNotDivisibleByThreeOrFive
     {
-        [Fact]
+        [TestMethod]
         public void ShouldRenderNumber()
         {
             TestHelper.AssertRendered(7, "7");

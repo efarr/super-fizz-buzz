@@ -12,7 +12,7 @@ namespace SuperFizzBuzzTests
 
         public WhenOverridingMultiples()
         {
-            _rendered = FizzBuzz.Calculate(100, (7, "Dog"), (3, "Hot"), (42, "WithMustard")).ToList();
+            _rendered = FizzBuzz.Calculate(100, (-3, "Never"), (7, "Dog"), (3, "Hot"), (42, "WithMustard")).ToList();
         }
 
         [TestMethod]
@@ -27,6 +27,12 @@ namespace SuperFizzBuzzTests
         {
             Assert.AreEqual("HotDog", _rendered[21 - 1]);
             Assert.AreEqual("HotDogWithMustard", _rendered[42 - 1]);
+        }
+
+        [TestMethod]
+        public void ShouldIgnoreNegativeMultiples()
+        {
+            Assert.AreEqual(0, _rendered.Count(s => s.Contains("Never")));
         }
     }
 }

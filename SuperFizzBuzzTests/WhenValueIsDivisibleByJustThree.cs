@@ -1,10 +1,11 @@
-using Xunit;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace SuperFizzBuzz.Specs
+namespace SuperFizzBuzzTests
 {
+    [TestClass]
     public class WhenValueIsDivisibleByJustThree
     {
-        [Fact]
+        [TestMethod]
         public void ShouldRenderFizz()
         {
             TestHelper.AssertRendered(9, "Fizz");

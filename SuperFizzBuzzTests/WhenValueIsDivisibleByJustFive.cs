@@ -1,10 +1,11 @@
-using Xunit;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace SuperFizzBuzz.Specs
+namespace SuperFizzBuzzTests
 {
+    [TestClass]
     public class WhenValueIsDivisibleByJustFive
     {
-        [Fact]
+        [TestMethod]
         public void ShouldRenderBuzz()
         {
             TestHelper.AssertRendered(10, "Buzz");

@@ -39,7 +39,7 @@ namespace SuperFizzBuzz
 
         private static List<int> CacheSortedListForFastIteration(Dictionary<int, string> overrides)
         {
-            return overrides.Keys.ToList().OrderBy(k => k).ToList();
+            return overrides.Keys.Where(i => i > 0).ToList().OrderBy(k => k).ToList();
         }
 
         private static Dictionary<int, string> CacheDictionaryForFastLookups(IEnumerable<Tuple<int, string>> overridePairs)

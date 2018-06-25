@@ -1,9 +1,11 @@
 using System.Collections.Generic;
 using System.Linq;
-using Xunit;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SuperFizzBuzz;
 
-namespace SuperFizzBuzz.Specs
+namespace SuperFizzBuzzTests
 {
+    [TestClass]
     public class WhenRenderingListToOneHundred
     {
         private readonly IList<string> _rendered;
@@ -13,15 +15,15 @@ namespace SuperFizzBuzz.Specs
             _rendered = FizzBuzz.Calculate(100).ToList();
         }
 
-        [Fact]
+        [TestMethod]
         public void ShouldReturnOneHundredValues()
         {
-            Assert.Equal(100, _rendered.Count);
+            Assert.AreEqual(100, _rendered.Count);
         }
-        [Fact]
+        [TestMethod]
         public void ShouldStartWithOne()
         {
-            Assert.Equal("1", _rendered.First());
+            Assert.AreEqual("1", _rendered.First());
         }
     }
 }
